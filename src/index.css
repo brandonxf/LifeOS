@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #0a0a0f;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #12121a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a3a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a4a;
+}
+
+/* Progress bar animation */
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+}
+
+.progress-animate {
+  animation: progressFill 0.5s ease-out;
+}
+
+/* Water wave animation */
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.wave-animation {
+  animation: wave 2s linear infinite;
+}
+
+/* Glow effect */
+.glow-green {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 255, 136, 0.1);
+}
+
+/* Confetti animation */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  animation: confetti-fall 3s ease-out forwards;
+}
+
+/* Slide up animation for modals */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-animate {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Pulse animation for active states */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
